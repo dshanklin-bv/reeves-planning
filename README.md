@@ -2,49 +2,11 @@
 
 The gold standard for building a personal AI operating system that reads minds and collapses the distance between intent and outcome.
 
-## What This Is
+## Read This First
 
-This repo contains the complete planning, vision, architecture, and research for **Reeves 3.0** — transforming a powerful-but-invisible AI system into the first true personal AI operating system. One that observes your life, models who you are, infers what you need, and builds the outcome before you ask.
+Reeves is a macOS-native personal AI system. It observes your life through data sources only a Mac can access (Messages, Photos, Screen Time, Notes), models who you are, infers what you need, and collapses the distance between intent and outcome.
 
-## The Philosophy
-
-AI should collapse the distance between intent and outcome for everyone. Not just for coders. Not just for the technically capable. For anyone who can describe what they want and let intelligence handle the rest.
-
-Reeves is the prototype. Built for one person first — the most instrumented test case available. Every pattern validated here becomes architecture that works for everyone.
-
-## Repo Structure
-
-```
-reeves-planning/
-├── VISION.md                         # Core philosophy and north star
-├── architecture/
-│   ├── mind-reading-loop.md          # The 6-step continuous intelligence loop
-│   ├── reeves-3.0-pillars.md        # 5 engineering pillars
-│   ├── data-sources.md              # Every surface Reeves observes
-│   └── agent-roster.md             # PAL, Ralph, Claude — the product org
-├── slash-commands/
-│   ├── mindreader.md                # /mindreader — know me better than I know myself
-│   ├── maxralphie.md                # /maxralphie — vision accelerator
-│   ├── ralphie.md                   # /ralphie — parallel task swarm
-│   └── command-hierarchy.md         # How they chain together
-├── schemas/
-│   ├── pefm.md                      # Personal Emotional Field Model
-│   ├── knowledge-graph.md           # RDF triple graph with confidence
-│   ├── log-table.md                 # Unified log primitive
-│   └── person-model.md             # What "knowing a person" means
-├── research/
-│   ├── opus-4.6-capabilities.md     # Claude Opus 4.6 benchmarks + features
-│   ├── claude-code-features.md      # CLI capabilities for autonomous swarms
-│   ├── pal-mcp-tools.md            # Multi-model orchestration
-│   ├── openai-realtime-ga.md       # Voice API debugging learnings
-│   └── voice-transcripts.md        # 59 recovered voice messages
-├── context/
-│   ├── who-is-dallas.md            # Builder profile + societal ambition
-│   └── chat-transcript.jsonl       # Full design conversation for study
-└── tasks/
-    ├── reeves-3.0-project.md       # All tasks from the Reeves 3.0 project
-    └── ux-issues-from-voice.md     # Issues surfaced from voice transcripts
-```
+**The cardinal rule: everything goes through the daemon.** All services, jobs, and processes are managed by `reeves-daemon` via `launchd`. Do not install services globally, run processes manually, or create standalone launchd plists. If you're adding a new process to any service, define it in the daemon's configuration.
 
 ## The Loop
 
@@ -65,6 +27,67 @@ LEARN     →  outcomes feed back, model improves, cycle repeats
 /ralphie      →  "Here are 5 engineers shipping it right now"
 ```
 
+## Repo Structure
+
+```
+reeves-planning/
+│
+├── VISION.md                          # Core philosophy and north star
+│
+├── philosophy/                        # WHY — the intellectual foundation
+│   ├── essays/                        #   AI hasn't lived yet, Krebs cycle, 750MB, write DNA not code
+│   ├── frameworks/                    #   Two primitives, evolutionary loop, selection pressure
+│   └── implications/                  #   Democratization of agency, scaling isn't enough, timeline
+│
+├── architecture/                      # WHAT — the product design
+│   ├── mind-reading-loop.md           #   The 6-step continuous intelligence loop
+│   ├── reeves-3.0-pillars.md         #   5 engineering pillars
+│   ├── data-sources.md               #   Every surface Reeves observes
+│   └── agent-roster.md              #   Claude, PAL, Ralph Loop — the product org
+│
+├── infrastructure/                    # HOW — how it runs on the Mac
+│   ├── platform.md                    #   Mac-only thesis, hardware, data flow, why not Linux
+│   ├── daemon.md                      #   reeves-daemon: launchd, service lifecycle, state machine
+│   ├── gateway.md                     #   Caddy reverse proxy, UDS, path-based routing
+│   ├── services.md                    #   Anatomy of a service (web + CLI + MCP + jobs)
+│   ├── common.md                      #   reeves-common: make_app, shared CSS, health endpoints
+│   └── mechanic.md                    #   Fleet health, integration testing, compliance scanners
+│
+├── schemas/                           # DATA — the unified primitives
+│   ├── log-table.md                   #   Unified append-only log (31K+ rows, PEFM, embeddings)
+│   ├── pefm.md                        #   Personal Emotional Field Model (6 dimensions, decay)
+│   ├── knowledge-graph.md             #   RDF triples with confidence
+│   └── person-model.md              #   What "knowing a person" means
+│
+├── slash-commands/                    # AGENTS — autonomous command specs
+│   ├── mindreader.md                  #   /mindreader — know me better than I know myself
+│   ├── maxralphie.md                  #   /maxralphie — vision accelerator (15-25 agents)
+│   ├── ralphie.md                     #   /ralphie — parallel task swarm
+│   └── command-hierarchy.md           #   How they chain together
+│
+├── research/                          # RESEARCH — capabilities and learnings
+│   ├── opus-4.6-capabilities.md       #   Claude Opus 4.6 benchmarks + features
+│   ├── claude-code-features.md        #   CLI capabilities for autonomous swarms
+│   ├── pal-mcp-tools.md             #   Multi-model orchestration
+│   ├── openai-realtime-ga.md         #   Voice API debugging learnings
+│   └── voice-transcripts.md          #   59 recovered voice messages
+│
+├── tasks/                             # TASKS — project tracking
+│   ├── reeves-3.0-project.md         #   11 tasks across 5 pillars
+│   └── ux-issues-from-voice.md       #   Issues surfaced from voice transcripts
+│
+└── context/                           # CONTEXT — who's building this
+    └── who-is-dallas.md              #   Builder profile + societal ambition
+```
+
+### How to Navigate
+
+- **New to reeves?** Start with `VISION.md`, then `philosophy/essays/ai-hasnt-lived-yet.md`.
+- **Building a service?** Read `infrastructure/services.md` and `infrastructure/common.md`.
+- **Working on the daemon?** Read `infrastructure/daemon.md` and `infrastructure/gateway.md`.
+- **Understanding the data model?** Read `schemas/log-table.md` — it's the unified primitive everything else builds on.
+- **AI session starting work?** Read this README and `infrastructure/services.md` before touching any code.
+
 ## Origin
 
-This repo was created from a single design conversation on February 14, 2026. The full transcript is preserved in `context/chat-transcript.jsonl` for study. Everything here — the vision, the architecture, the slash commands, the schemas — emerged from that conversation.
+This repo consolidates the vision, philosophy, architecture, and infrastructure documentation for the Reeves ecosystem. The vision and philosophy crystallized from a design conversation on February 14, 2026. The infrastructure documentation captures the running system as it evolves.
