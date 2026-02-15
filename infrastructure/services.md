@@ -99,6 +99,7 @@ Current services (as of Feb 2026):
 | messages | messages.* | 8771 | Early |
 | health | health.* | 8772 | Development |
 | mechanic | (stateless) | 8773 | Infrastructure |
+| router | (stateless) | 8774 | v1 — keyword matching |
 
 ## Adding a New Service
 
