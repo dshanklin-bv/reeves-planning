@@ -62,22 +62,9 @@ reeves_daemon/
 
 ## The Multi-Process Future
 
-Today: one service = one web process. The architecture is evolving toward multiple process types per service:
+Today: one service = one web process. The architecture is designed to evolve toward multiple process types per service — jobs, daemons, and socket-activated processes — all managed through launchd.
 
-- **web** — always-on uvicorn on UDS behind Caddy
-- **job** — scheduled or file-triggered, run-to-completion (e.g., email fetch every 15min)
-- **daemon** — long-running non-web process (e.g., MCP server, queue worker)
-
-Each process type maps to a launchd primitive:
-
-| Process Type | launchd Mechanism |
-|-------------|------------------|
-| web (always-on) | `KeepAlive: true` |
-| job (scheduled) | `StartCalendarInterval` |
-| job (file-triggered) | `WatchPaths` |
-| daemon (on-demand) | `Sockets` (socket activation) |
-
-Config will support a shorthand for simple services and explicit `units:` for complex ones. See `services.md` for the full pattern.
+See **[processes.md](processes.md)** for the full design: unit kinds, config schema, trigger mapping, runtime knobs, and implementation phases.
 
 ## CLI Reference
 

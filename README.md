@@ -51,7 +51,8 @@ reeves-planning/
 │   ├── gateway.md                     #   Caddy reverse proxy, UDS, path-based routing
 │   ├── services.md                    #   Anatomy of a service (web + CLI + MCP + jobs)
 │   ├── common.md                      #   reeves-common: make_app, shared CSS, health endpoints
-│   └── mechanic.md                    #   Fleet health, integration testing, compliance scanners
+│   ├── mechanic.md                    #   Fleet health, integration testing, compliance scanners
+│   └── processes.md                   #   Multi-process architecture: jobs, daemons, socket activation
 │
 ├── schemas/                           # DATA — the unified primitives
 │   ├── log-table.md                   #   Unified append-only log (31K+ rows, PEFM, embeddings)
@@ -84,7 +85,7 @@ reeves-planning/
 
 - **New to reeves?** Start with `VISION.md`, then `philosophy/essays/ai-hasnt-lived-yet.md`.
 - **Building a service?** Read `infrastructure/services.md` and `infrastructure/common.md`.
-- **Working on the daemon?** Read `infrastructure/daemon.md` and `infrastructure/gateway.md`.
+- **Working on the daemon?** Read `infrastructure/daemon.md`, `infrastructure/processes.md`, and `infrastructure/gateway.md`.
 - **Understanding the data model?** Read `schemas/log-table.md` — it's the unified primitive everything else builds on.
 - **AI session starting work?** Read this README and `infrastructure/services.md` before touching any code.
 
