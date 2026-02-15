@@ -6,6 +6,8 @@ The router knows what every service can do. Agents ask it questions instead of k
 
 Without a router, cross-service communication is N-squared. Finance needs to know email's API to get receipts. Tax needs to know finance's API to get transactions. Health needs to know relationships' API to identify doctors. Every new service has to learn about every existing one.
 
+There's also a cost problem. reeves-web (the kernel) currently has 100+ MCP tools loaded. Every agent call forces the model to scan all of them to pick the right one. More tools in context = more tokens per call = slower routing = more expensive. The kernel is the de facto router today — it just does it expensively, by putting everything in context and hoping the model picks correctly.
+
 ## The Solution
 
 One service that maintains a capability map. Any agent or service that needs data describes what it needs. The router responds with where to get it and how.
@@ -21,6 +23,33 @@ Router: [
 ```
 
 Finance doesn't know email, assets, or relationships exist. It asked a question and got a plan.
+
+## Why Build Early
+
+The router pays for itself immediately:
+
+1. **Token reduction.** Instead of 100 tool definitions in every agent context, one `ask_router` tool. The model sends a need, gets back only the relevant capabilities. Smaller context = faster inference = cheaper.
+2. **Kernel slimming.** reeves-web currently acts as the router by knowing about every module. Extract the routing concern and the kernel gets simpler.
+3. **Clean cross-service flows from day one.** The finance ↔ email enrichment pipeline doesn't need to be built direct and then refactored. It goes through the router from the start.
+4. **Every new service is immediately available.** Register capabilities, done. No changes to existing services or the kernel.
+
+This pattern didn't exist pre-AI. Old routers (Consul, Istio, API gateways) route by address — you have to know what you want and where it lives. This routes by need. That requires understanding the question and matching it to capabilities. Pre-AI, that would have been a massive hand-coded rules engine. Now it's a capability registry plus one inference call.
+
+## Dynamic Capability Lookup
+
+The router is like a dynamic tool. Static tools say "here are 100 things I can do, pick one." The router says "what do you need?" and returns only the relevant capabilities.
+
+One tool in the MCP registry. Every service behind it.
+
+```
+# What an agent sees in its tool list
+ask_router:
+  description: "Describe what you need. Returns which services can help and how to call them."
+  params:
+    need: string   # Natural language description of what you're trying to accomplish
+```
+
+The agent doesn't need to know the topology. It describes the need, gets back a focused set of actions, and executes them. The 100-tool context window becomes a 1-tool context window with targeted follow-up.
 
 ## Capability Registration
 
@@ -51,10 +80,6 @@ INFER decides WHAT to know
 
 The router is INFER's execution layer. It doesn't decide what matters — that's the brain. It decides where to go to find out.
 
-## Implementation Timing
-
-Build after the first real cross-service flow (finance ↔ email enrichment) ships. That integration will reveal the actual interface patterns. Router-first would be speculative. Router-after-one-real-integration is informed.
-
 ## Relationship to MCP
 
-Claude already has MCP tool dispatch — register tools, model picks which to call. The router is the same pattern for service-to-service communication, running locally without an LLM in the loop for every routing decision. The capability map is static knowledge, not inference.
+Claude already has MCP tool dispatch — register tools, model picks which to call. The router doesn't replace MCP tools. It means an agent's first call is "what can help me with X" instead of scanning 100 tool definitions. The tools still exist. The router narrows the field.
