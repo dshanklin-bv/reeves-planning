@@ -43,7 +43,10 @@ reeves-planning/
 │   ├── mind-reading-loop.md           #   The 6-step continuous intelligence loop
 │   ├── reeves-3.0-pillars.md         #   5 engineering pillars
 │   ├── data-sources.md               #   Every surface Reeves observes
-│   └── agent-roster.md              #   Claude, PAL, Ralph Loop — the product org
+│   ├── agent-roster.md              #   Claude, PAL, Ralph Loop — the product org
+│   ├── router.md                     #   Capability discovery: agents ask, router answers
+│   ├── deep-sleep.md                 #   LEARN machinery: consolidation pipeline, tiered LLM costs
+│   └── governance.md                 #   Three pillars: context, intent, guardrails
 │
 ├── infrastructure/                    # HOW — how it runs on the Mac
 │   ├── platform.md                    #   Mac-only thesis, hardware, data flow, why not Linux
