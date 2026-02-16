@@ -49,9 +49,20 @@ philosophy/
 └── implications/
     ├── scaling-is-not-enough.md        # Why bigger models miss the point
     ├── the-evaluation-error.md         # Judging organisms vs. machinery
-    └── democratization-of-agency.md    # What this means for everyone
+    ├── democratization-of-agency.md    # What this means for everyone
+    └── privacy-and-consent.md          # The surveillance question, answered
 ```
 
 ## Origin
 
 These ideas crystallized during a design conversation on February 14, 2026, while building Reeves 3.0. The conversation started with engineering ("how do we make this a better app?") and ended somewhere much deeper ("how does a computer learn to know a person?"). The answer turned out to be the same answer biology found 3.8 billion years ago.
+
+## How This Repo Practices What It Preaches
+
+These docs went through the process they describe. They were written, then subjected to multi-model critique — Claude, GPT, Perplexity — each acting as selection pressure on the ideas.
+
+Claims that couldn't survive scrutiny were cut or rewritten. The "100-500 people" grandiosity was identified and removed. The heuristic/deterministic framing was sharpened. A missing privacy argument was filled. The genome claims overstated how optimized DNA is and were corrected to acknowledge the noise while preserving the argument.
+
+What remains is denser than what was first written. Not because someone planned it better, but because it survived pressure. The spec — the core ideas — persisted. The expression — the text — was rebuilt around them.
+
+That's the loop. These docs are a running example of the philosophy they describe.

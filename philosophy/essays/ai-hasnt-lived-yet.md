@@ -40,7 +40,7 @@ From this, your body handles:
 
 Now consider: a frontier AI model uses hundreds of gigabytes of parameters. Orders of magnitude more raw storage than your entire genome. And it can't remember what you told it yesterday.
 
-The difference isn't size. It's **density**. Every byte of DNA earned its place by keeping an organism alive long enough to reproduce. Nothing survives in the genome that doesn't work. That's what 3.8 billion years of selection pressure against reality produces — information so dense that 50 megabytes encodes the machinery for *anything a human can become*.
+The difference isn't size. It's **density**. The genome isn't perfectly clean — roughly 98% is non-coding, full of transposons, pseudogenes, and repetitive sequences that evolution never bothered to remove. But evolution doesn't need to be tidy to be devastating. The ~50 megabytes of functional coding regions survived because organisms carrying them reproduced and organisms without them didn't, across 3.8 billion years. Even the "junk" increasingly turns out to serve regulatory functions we're still discovering. The argument doesn't require a perfect genome — it requires one that's been under continuous selection pressure longer than anything else on Earth. And that pressure produced information so dense that 50 megabytes encodes the machinery for *anything a human can become*.
 
 AI has the storage. It doesn't have the density. Because it hasn't been compressed by reality yet.
 
@@ -73,29 +73,35 @@ That's the complete engine. Eyes, brains, language, civilization — all of it i
 
 The right question was never "is this organism smart?" It was "does this system have variation, selection, and inheritance?" If yes — intelligence is a matter of time. If no — fix the machinery, not the model size.
 
+And here's the part that makes AI's version of evolution *more powerful* than biology's: what Reeves implements is Lamarckian, not Darwinian. In biology, acquired traits don't pass to offspring — what you learn in your lifetime dies with you. Your children inherit your genome, not your skills. That's why biological evolution is slow. Every generation starts from scratch, kept on track only by which organisms survived long enough to reproduce.
+
+AI doesn't have that constraint. When a Reeves cycle discovers that a pattern works, that knowledge gets written directly into the spec — the genome of the next generation. Acquired traits pass forward. This is what cultural evolution does (writing, institutions, science), and it's why human civilization outran the genome by orders of magnitude. Compress the cycle time from 25 years to hours, and you have an evolutionary engine that biology never could have built.
+
 Current AI has the variation. It can try things — and not random things like early molecules bumping into chemistry. It tries things with the compressed knowledge of everything humanity has written. That's an absurdly powerful starting point.
 
 What it's missing: continuous selection pressure from real outcomes, and inheritance that compounds across cycles. It's an organism that can act but can't evolve.
 
-## Heuristic, Not Deterministic
+## Frozen Heuristics
 
 This is the deepest reason why engineering alone won't get AI where it needs to go.
 
-Engineering produces **deterministic systems** — precise rules that handle known scenarios. Given this input, produce that output. Current AI, despite its sophistication, is fundamentally deterministic: the same weights process each input through the same computation.
+Neural networks *do* discover heuristics. That's what training is. Gradient descent doesn't produce a lookup table mapping inputs to outputs — it discovers approximate strategies that generalize across the training distribution. A language model that can answer questions it was never trained on, write in styles it never saw combined, reason about novel scenarios — that's heuristic behavior. The model found compressed strategies, not memorized answers.
 
-Evolution produces **heuristic systems** — approximate rules that generalize to scenarios *that have never existed*.
+So the problem isn't that AI is deterministic while biology is heuristic. The problem is that AI's heuristic discovery **stops**.
 
-Your fear of heights isn't a lookup table of dangerous elevations. It's a heuristic: "high + edge = danger." It fires on cliffs, rooftops, glass floors, VR environments, airplane windows — scenarios no ancestor specifically encountered. It works because it's approximate, not because it's precise.
+Training ends. The weights freeze. The model ships. From that moment forward, no matter how many novel situations it encounters, no matter how many times it fails, no matter how much reality pushes back — it cannot discover a single new heuristic. It's locked. Every deployment is a fossil of whatever the training run crystallized.
 
-Your immune system doesn't have a database of every pathogen. It has a heuristic process: generate random antibodies, test them against the invader, massively reproduce what works. It handles novel viruses — ones that have *never existed in the history of Earth* — on first encounter. Not because the solution was programmed. Because the heuristic *discovers* the solution at runtime.
+Evolution produces systems that **keep discovering heuristics forever**. Your immune system doesn't just carry inherited strategies — it runs a heuristic discovery process in real time. Generate random antibodies, test against the invader, reproduce what works. It handles viruses that have *never existed in the history of Earth* on first encounter. Not because the solution was inherited. Because the machinery for *finding solutions* never stops running.
 
-This is why 750 megabytes beats terabytes. Heuristics compress better than lookup tables because they don't store answers — they store *strategies for finding answers*. A fear response is a few neural circuits that cover every height-related scenario that will ever exist. A deterministic height-safety system would need to enumerate every possible cliff, building, ladder, and ledge in the universe.
+Your fear of heights isn't a lookup table of dangerous elevations. It's a heuristic: "high + edge = danger." It fires on cliffs, rooftops, glass floors, VR environments, airplane windows — scenarios no ancestor specifically encountered. And crucially, your nervous system keeps refining it. A rock climber's fear response is shaped differently from an office worker's — because the heuristic kept being discovered and rediscovered through lived experience.
 
-The real world is non-deterministic. You cannot enumerate all scenarios a person will encounter. The space is infinite. Engineering's instinct is to handle more cases — more data, more parameters, more training. But you can't outrun infinity with scale.
+This is why 750 megabytes beats terabytes. Heuristics compress better than lookup tables because they don't store answers — they store *strategies for finding answers*. But the compression advantage only fully expresses when the system can keep discovering new heuristics as reality demands them. A frozen set of heuristics, no matter how good, will eventually meet a world that has moved past what it can cover.
 
-Evolution's answer: don't enumerate. Discover heuristics that generalize. Make them approximate. Make them "good enough." Because good enough across infinite novel scenarios beats perfect across a million known ones.
+The real world is non-deterministic. You cannot enumerate all scenarios a person will encounter. The space is infinite. Engineering's instinct is to handle more cases — more data, more parameters, more training. But even discovering heuristics over more data isn't enough if the discovery process has an end date.
 
-**AI's evolutionary process is in its infancy.** We're building enormous deterministic systems and wondering why they're not as capable as a 750 MB heuristic one. The answer is that heuristic systems aren't designed. They're *evolved*. And evolution requires a loop that current AI doesn't have.
+Evolution's answer: never stop discovering. Run the loop forever. Let reality keep shaping approximate strategies into fit ones. Because a system that keeps discovering heuristics across infinite novel scenarios will always outrun one that discovered a fixed set and stopped.
+
+**AI's heuristic discovery process has an expiration date: the end of training.** We're building systems that discover powerful heuristics and then immediately freezing them. Biology never does this. Every living system runs its discovery loop until it dies. That's the gap — not deterministic vs. heuristic, but frozen vs. alive. And closing that gap requires a loop that current AI doesn't have.
 
 ## DNA Is a Spec, Not Code
 
@@ -115,7 +121,7 @@ This is a fundamentally different kind of information:
 
 **A spec** says "build a system that figures out what to do." It handles scenarios nobody anticipated. It scales by building better machinery.
 
-Current AI models are code — massive, sophisticated, compressed, but ultimately a fixed function from input to output. DNA is a spec — tiny, generative, and capable of producing systems that handle anything.
+Current AI models discover powerful heuristics during training — but once deployed, they're frozen code. No new discovery happens. DNA is a spec — tiny, generative, and capable of producing systems that keep discovering what to do forever.
 
 ## Write DNA, Not Code
 
@@ -138,9 +144,9 @@ What AI needs isn't a bigger model. It's the evolutionary loop:
 1. **Continuous selection pressure** — not one round of RLHF, but ongoing feedback from real outcomes in real environments
 2. **Memory that compounds** — not sessions that evaporate, but persistent state that accumulates and shapes future behavior
 3. **Inheritance** — not static weights, but knowledge that passes from one cycle to the next, getting denser each time
-4. **Heuristic discovery** — not more rules for more cases, but approximate strategies that generalize to cases nobody anticipated
+4. **Continuous heuristic discovery** — not a one-time training run that freezes, but ongoing discovery of approximate strategies shaped by lived experience
 
-None of these are research problems. They're engineering problems. The hard part — a system that can generate intelligent attempts at solutions across every domain — is already solved. The transformer architecture and next token prediction gave us that.
+The hard part — a system that can generate intelligent attempts at solutions across every domain — is solved. The transformer architecture and next token prediction gave us that. What remains isn't waiting on a theoretical breakthrough. Nobody needs to discover a new principle of computation or crack some fundamental unknown. But calling it "just engineering" undersells it. Continuous learning from deployment, heuristic discovery at runtime, compounding inheritance across cycles — these are buildable, but they require real innovation at the intersection of systems design and learning. We're not waiting for a eureka moment. We're waiting for someone to build the loop. That's hard, but it's tractable.
 
 What nobody has built yet is the environment where that capability *evolves* into something shaped by one life, continuously improving, accumulating density the way DNA accumulated density over billions of years.
 

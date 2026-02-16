@@ -90,6 +90,4 @@ The people who resist this technology aren't stupid — they're scared. And that
 
 Governance and testing — not code — make this safe. Speed is possible BECAUSE the testing is structural. This is an earned conviction, not a theoretical position.
 
-~100-500 people on Earth currently hold this full picture: the technical capability, the civilizational vision, the governance discipline, and the genuine desire to pull others along.
-
-That number will grow. This repo is part of how.
+This repo exists to make the picture legible — so more people can build on it.

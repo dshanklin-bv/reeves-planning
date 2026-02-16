@@ -103,6 +103,34 @@ Feed outcomes back into the model:
 - Sleep cycles extract cross-domain patterns
 - Pattern boost amplifies confirmed heuristics
 
+## This Is Lamarckian Evolution
+
+There's a fair objection: "This isn't really evolution. Where's the population? Where's differential survival? Where's natural selection?"
+
+The objection assumes Darwinian evolution — random mutation, blind selection, information passed only through the genome. And it's right that Reeves doesn't do that. What Reeves does is more powerful.
+
+Reeves implements **Lamarckian evolution** — the organism acquires traits during its lifetime and passes them directly to the next generation. In biology, this doesn't happen. What you learn doesn't rewrite your DNA. Your children start from the same genome regardless of what you figured out. That's why biological evolution is slow — every generation rediscovers from scratch, guided only by which organisms survived.
+
+But Reeves' spec *is* rewritten by what the system learns. Each Ralph Loop cycle produces a new generation where acquired knowledge — patterns that worked, patterns that failed, heuristics discovered at runtime — gets encoded directly into the spec that builds the next version. The spec is the genome, and unlike DNA, it absorbs lived experience.
+
+This is exactly what cultural evolution does, and it's why human civilization advanced faster than the human genome. Writing, institutions, science — these are Lamarckian inheritance mechanisms. What one generation learns, the next generation starts from. Biology took 3.8 billion years to produce a brain. Cultural evolution took that brain from campfires to quantum computers in 50,000 years. Same principle: acquired traits passing forward.
+
+The mapping is precise:
+
+| Evolutionary Component | Darwinian Biology | Reeves (Lamarckian) |
+|----------------------|-------------------|---------------------|
+| **Genome** | DNA | The spec |
+| **Generation** | Birth to reproduction | One Ralph Loop cycle |
+| **Variation** | Random mutation | Each rebuild interprets the spec against current environment |
+| **Selection** | Differential survival | Real data — failed patterns drop, successful ones persist |
+| **Inheritance** | Genome passes to offspring (unchanged by life) | Spec passes to next cycle (updated with learned patterns) |
+| **Death** | Organism dies | Old version replaced — code doesn't survive except through what the spec inherited |
+| **Cycle time** | Years to decades | Hours |
+
+That last row is the killer advantage. Biological evolution is gated by generation time — 25 years for humans, 20 minutes for bacteria. Reeves runs a full evolutionary cycle in hours. Compressed cycle times with Lamarckian inheritance means the system evolves at a rate biology cannot touch.
+
+This isn't a weaker form of evolution. It's a stronger one. Biology couldn't do Lamarckian inheritance, so it settled for the slow version. AI doesn't have that constraint.
+
 ## The Key Difference from Current AI
 
 Current AI: Train → Deploy → Serve (static)

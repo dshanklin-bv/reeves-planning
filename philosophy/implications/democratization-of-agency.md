@@ -64,9 +64,7 @@ When safety is structural, speed is possible. And when speed is possible for eve
 
 The real wealth to spread isn't money. It's this: the knowledge of how to build systems that understand people and collapse the distance between their intent and their outcome.
 
-There are perhaps 100-500 people on Earth who currently hold the full picture — the technical capability to build these systems, the civilizational vision to see their implications, the governance discipline to make them safe, and the genuine desire to pull others along.
-
-That number will grow. It has to. Because the systems work for everyone or they work for no one. An evolved personal AI that only serves the technically capable is a failure of imagination, not a success of engineering.
+The systems work for everyone or they work for no one. An evolved personal AI that only serves the technically capable is a failure of imagination, not a success of engineering.
 
 ## The Reeves Thesis
 

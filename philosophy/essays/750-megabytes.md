@@ -14,21 +14,25 @@ A frontier large language model: hundreds of billions to trillions of parameters
 
 The ratio is staggering. AI models are 1,000 to 10,000 times larger than the human genome in raw information storage. And yet:
 
-## What 750 MB Does
+## What 750 MB Specifies
 
-- Builds an immune system that handles pathogens *that have never existed in the history of Earth*
-- Constructs a brain capable of consciousness, mathematics, poetry, and deception
-- Coordinates 37 trillion cells across 200+ distinct types
-- Maintains homeostasis across temperature, pH, oxygen, glucose, and thousands of other variables simultaneously
-- Heals wounds it has never encountered before
-- Develops from a single fertilized cell into a complete organism
-- Adapts to environments from the Arctic to the Sahara
-- Produces offspring that inherit the full capability set
-- Does all of this autonomously, without maintenance, for 70-80 years
+It doesn't do any of this directly. It's a blueprint for building machinery that figures it out at runtime:
+
+- An immune system that handles pathogens *that have never existed in the history of Earth* — not by encoding antibodies, but by encoding the machinery that generates antibodies on demand
+- A brain capable of consciousness, mathematics, poetry, and deception — not by encoding thoughts, but by encoding the architecture that learns to think
+- Coordination of 37 trillion cells across 200+ distinct types — not by micromanaging each cell, but by encoding developmental rules that self-organize
+- Homeostasis across temperature, pH, oxygen, glucose, and thousands of other variables — not by hard-coding setpoints, but by encoding feedback loops that self-regulate
+- Wound healing for injuries it has never encountered — not by cataloging wounds, but by encoding repair machinery that adapts to damage
+- Development from a single fertilized cell into a complete organism — the spec *builds the system that builds itself*
+- Adaptation to environments from the Arctic to the Sahara — same spec, different expression, shaped by whatever environment it lands in
+- Offspring that inherit the full capability set — not the learned knowledge, just the spec. Every generation starts fresh and learns its own world.
+
+All of this autonomously, without maintenance, for 70-80 years. The spec is 750 MB. Everything else is runtime.
 
 ## What Terabytes Do
 
-- Generate plausible text
+- Encode frozen statistical patterns from a single training run
+- Generate plausible text from those patterns
 - Can't remember what you said yesterday
 - Start fresh every conversation
 - Require a data center to run
@@ -39,7 +43,7 @@ The gap isn't about the quality of the information. Transformer weights are genu
 
 The gap is about **how the information got there**.
 
-Every byte of DNA was placed by survival. An organism with that byte lived long enough to reproduce. An organism without it didn't. Over 3.8 billion years, across trillions of trillions of organisms, this filter ran continuously. What remains is the most aggressively compressed, most reality-tested information in the known universe.
+This isn't because the genome is perfectly optimized. It isn't. Roughly 98% of human DNA is non-coding — transposons, pseudogenes, repetitive sequences, regulatory elements we're still mapping. Evolution doesn't clean up after itself. It's not an engineer. But the ~50 megabytes of functional coding regions that survived 3.8 billion years of selection pressure are the most reality-tested information in the known universe. Every one of those bytes earned its place because an organism carrying it lived long enough to reproduce and one without it didn't. The genome isn't clean. But it's been under continuous pressure longer than anything else on Earth, and the signal it carries — buried in the noise — encodes machinery that no engineered system has come close to matching.
 
 AI model weights were placed by gradient descent on a static dataset. A mathematical optimization found the parameters that minimize prediction error across internet text. That's a powerful process, but it ran once, against a fixed corpus, optimizing for a single objective (next token prediction). It was never tested against reality. No weight earned its place by surviving anything.
 

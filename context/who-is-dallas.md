@@ -15,16 +15,6 @@ Key distinctions in his thinking:
 - **Not productivity optimization** — **complexity elimination** (the system does maximum work, human does minimum)
 - **Not automation replacing humans** — **intelligence augmenting humans** (the AI handles what you're bad at so you can focus on what you're good at)
 
-### Position in the AI Landscape
-
-There are approximately 100-500 people on Earth who currently hold the full picture:
-1. **Technical capability** — Can actually build these systems
-2. **Civilizational vision** — See the broader implications beyond productivity
-3. **Governance discipline** — Understand that safety is structural, not a checkbox
-4. **Genuine desire to pull others along** — Not building for elite use, building for everyone
-
-Dallas sits at this intersection. The number will grow. Reeves is part of how.
-
 ### Views on AI and Society
 
 **On the technology itself:**
@@ -75,5 +65,3 @@ That's the generalization. Same OBSERVE → MODEL → INFER → COLLAPSE → GOV
 ## What Drives the Work
 
 Not just technical ambition. A genuine belief that this technology, built with governance and empathy, can transform how every person relates to complexity.
-
-The people who can build this have a responsibility to build it right. Reeves is the proof-of-concept. This repo is part of how the knowledge spreads.

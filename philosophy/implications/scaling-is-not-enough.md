@@ -73,4 +73,28 @@ The path is: **models that improve from use**.
 
 None of these require a bigger model. They require a different *architecture around* the model — persistent state, feedback mechanisms, selection pressure, and compounding inheritance.
 
+## The Strongest Counterarguments
+
+Two serious objections deserve honest engagement.
+
+### "RAG + tool use + long context might be good enough"
+
+This is the strongest near-term case against the evolutionary loop. Context windows are growing — 1M+ tokens is here, 10M is coming. RAG retrieval keeps improving. Tool use lets models take persistent actions. Chain these together and you get something that *looks* like memory: the system retrieves your past interactions, references your preferences, acts on your behalf. For many use cases, this is genuinely sufficient.
+
+Here's why it falls short: context is attention, not learning. You can stuff a million tokens into the window and retrieve the right fact at the right time, but the system never gets *better* at retrieval. It doesn't discover that three of your preferences are actually one underlying pattern. It doesn't compress. There's no density increase — no heuristic emerging from repeated experience. It's a prosthetic memory strapped to a static mind.
+
+The 750 MB argument applies directly. A million-token context window is brute-force lookup across raw data. It scales linearly: twice the history, twice the retrieval cost, twice the noise. Evolved heuristics scale logarithmically — a compressed pattern covers exponentially more cases than the raw observations it emerged from. Brute-force retrieval works until the context window fills, and then it fails ungracefully. There's no degradation curve. It just stops fitting.
+
+RAG + long context is a powerful crutch. But a crutch doesn't become a leg no matter how well-engineered it gets.
+
+### "The loop might produce overfitting, not general improvement"
+
+This one cuts deeper. A system that evolves around one person's patterns could become a mirror, not an advisor. It learns your shortcuts, your biases, your blind spots — and reinforces them. You get faster at being wrong. The evolutionary loop, unchecked, produces a yes-man with a PhD in telling you what you want to hear.
+
+This is a real risk, and it's exactly what governance exists to prevent.
+
+The loop doesn't run unsupervised. Multiple models review outputs — a generator, a critic, a calibrator. Confidence scoring catches when the system is too certain about things it shouldn't be. Sleep cycles specifically look for patterns the person *can't* see, because those are the blind spots by definition. And the selection pressure isn't "did the person like it" — it's "did the outcome match reality." A financial recommendation that felt right but lost money gets selected *against*, regardless of how much the person agreed with it at the time.
+
+Biological evolution has the same overfitting risk. A species perfectly adapted to one niche dies when the environment shifts. The defense is the same in both cases: diverse selection pressure. The loop must include external ground truth — outcomes, not just preferences. A system that only optimizes for user satisfaction is a recommender algorithm. A system that optimizes for user outcomes, validated against reality, is something else entirely.
+
 The model is the Krebs cycle. Stop trying to make it bigger. Start building the biology on top of it.
