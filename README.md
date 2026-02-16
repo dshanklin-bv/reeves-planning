@@ -34,6 +34,16 @@ reeves-planning/
 │
 ├── VISION.md                          # Core philosophy and north star
 │
+├── specs/                             # SPECS — executable specifications for agent work
+│   ├── autonomous-bookkeeping.md      #   AI does the books: pipeline, enrichment, LLM, reporting
+│   └── financial-entity-model.md      #   Accounts, institutions, merchants, payee normalization
+│
+├── methodology/                       # HOW — development planning philosophy
+│   ├── README.md                      #   When to use conga vs skateboard, spec lifecycle, three rules
+│   ├── elephant-conga-carpaccio.md    #   Dependency chains sliced thin
+│   ├── elephant-carpaccio.md          #   Alistair Cockburn's original principle
+│   └── meta-cognition.md             #   Plan→Act→Reflect→Refine loop, PAL as meta-agent
+│
 ├── philosophy/                        # WHY — the intellectual foundation
 │   ├── essays/                        #   AI hasn't lived yet, Krebs cycle, 750MB, write DNA not code
 │   ├── frameworks/                    #   Two primitives, evolutionary loop, selection pressure
@@ -83,6 +93,18 @@ reeves-planning/
 └── context/                           # CONTEXT — who's building this
     └── who-is-dallas.md              #   Builder profile + societal ambition
 ```
+
+## Development Methodology
+
+See `methodology/` for the full planning philosophy. The short version:
+
+1. **Two decomposition strategies.** Pipelines use **Elephant Conga Carpaccio** (dependency chains, sliced thin). Products use **Skateboard → Bike → Car** (standalone versions, increasing fidelity). See `methodology/README.md` for when to use which.
+
+2. **Spec-Driven Development.** Write executable specs before code. Specs define behavioral scenarios, acceptance criteria, commands, and boundaries. Agents pick them up cold and execute. Specs live in `specs/`.
+
+3. **Everything Through the Daemon.** All services, jobs, and processes managed by `reeves-daemon` via `launchd`. No standalone plists, no global packages, no manual processes.
+
+4. **Run real data after every slice.** The slice isn't done when the code compiles. It's done when you run it against reality and see what it does.
 
 ### How to Navigate
 

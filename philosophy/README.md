@@ -44,7 +44,8 @@ philosophy/
 │   ├── evolutionary-loop.md           # OBSERVE → MODEL → INFER → COLLAPSE → GOVERN → LEARN
 │   ├── selection-pressure.md          # What makes AI actually improve
 │   ├── search-and-graph.md           # Search is sensing, graph is memory
-│   └── ensemble-evolution.md         # Randomized critics as artificial selection
+│   └── ensemble-evolution.md          # Randomized critics as artificial selection
+│   (Development methodology frameworks live in ../methodology/)
 └── implications/
     ├── scaling-is-not-enough.md        # Why bigger models miss the point
     ├── the-evaluation-error.md         # Judging organisms vs. machinery
