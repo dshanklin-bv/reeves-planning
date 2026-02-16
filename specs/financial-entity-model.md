@@ -112,7 +112,7 @@ NOT 'Assets:Bank:Mercury'
 
 ### Slice 2: Seed Institutions
 
-**What:** Create institutions for the banks Dallas uses. Link to source accounts.
+**What:** Create institutions for the banks Daniel uses. Link to source accounts.
 
 ```
 GIVEN the institutions table is empty

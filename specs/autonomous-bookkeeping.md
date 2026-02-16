@@ -1,6 +1,6 @@
 # Spec: Autonomous Bookkeeping
 
-**Goal:** AI does Dallas's books. Transactions flow in from banks, get categorized, turned into journal entries, validated by Ledger CLI, and either auto-approved or queued for human review. The human touches the keyboard only for ambiguous items and monthly review.
+**Goal:** AI does Daniel's books. Transactions flow in from banks, get categorized, turned into journal entries, validated by Ledger CLI, and either auto-approved or queued for human review. The human touches the keyboard only for ambiguous items and monthly review.
 
 **Status:** Draft
 **Service:** reeves-finance
@@ -383,7 +383,7 @@ THEN it generates a report:
 
 ```
 GIVEN there are 3 pending entries
-WHEN Dallas opens the finance dashboard
+WHEN Daniel opens the finance dashboard
 THEN the autopilot page shows:
   - Last pipeline run time and status (green/yellow/red)
   - Pending review items with one-click approve/reject

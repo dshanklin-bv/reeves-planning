@@ -28,7 +28,7 @@ Each stage is a daemon job managed by the daemon (see `processes.md`). Each stag
 - Tag enrichment (auto-tag entries with relevant domains)
 
 ### Deep Sleep (Tier 2 — expensive LLM)
-- Pattern extraction: "Dallas texts his mom every Sunday" from 3 months of message data
+- Pattern extraction: "Daniel texts his mom every Sunday" from 3 months of message data
 - Anomaly detection: "Finance spending up 40% this month vs trailing average"
 - Relationship scoring recalculation from interaction frequency changes
 - PEFM dimension recalibration based on outcome data
@@ -44,7 +44,7 @@ Each stage is a daemon job managed by the daemon (see `processes.md`). Each stag
 Graph mutations and new rules require approval before they change the model. This prevents hallucinated patterns from corrupting the knowledge base.
 
 ```
-Deep Sleep proposes: "Dallas → works_with → Sarah (confidence: 0.7)"
+Deep Sleep proposes: "Daniel → works_with → Sarah (confidence: 0.7)"
   Evidence: 3 email threads, 2 calendar meetings, 1 message mention
   → Human reviews evidence → approves/rejects
   → If approved: edge created, confidence logged

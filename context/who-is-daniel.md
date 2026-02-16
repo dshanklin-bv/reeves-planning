@@ -1,14 +1,14 @@
-# Who Is Dallas — Builder Profile & Societal Ambition
+# Who Is Daniel — Builder Profile
 
 ## The Builder
 
-Dallas is building Reeves as the prototype for a system that collapses the distance between intent and outcome for everyone. Not just for coders. Not just for the technically capable. For anyone who can describe what they want and let intelligence handle the rest.
+Daniel is building Reeves as the prototype for a system that collapses the distance between intent and outcome for everyone. Not just for coders. Not just for the technically capable. For anyone who can describe what they want and let intelligence handle the rest.
 
 ## Worldview (from LinkedIn analysis, February 2026)
 
 ### Core Philosophy: Democratization of Agency Through AI
 
-Dallas doesn't just see AI as a productivity tool or a code generator. His vision is fundamentally about **democratizing agency** — giving every person access to the kind of intelligent support that was previously available only to those with technical skills, wealth, or institutional backing.
+Daniel doesn't just see AI as a productivity tool or a code generator. His vision is fundamentally about **democratizing agency** — giving every person access to the kind of intelligent support that was previously available only to those with technical skills, wealth, or institutional backing.
 
 Key distinctions in his thinking:
 - **Not democratization of access** (everyone gets a chatbot) — **democratization of agency** (everyone gets an AI that acts on their behalf)
@@ -52,7 +52,7 @@ Every pattern validated here becomes architecture that works for everyone.
 
 ## The Generalization Test
 
-**Reeves for Dallas:**
+**Reeves for Daniel:**
 Voice → tasks → finance → relationships → calendar → code → life management
 
 **Reeves for anyone:**

@@ -91,7 +91,7 @@ reeves-planning/
 │   └── ux-issues-from-voice.md       #   Issues surfaced from voice transcripts
 │
 └── context/                           # CONTEXT — who's building this
-    └── who-is-dallas.md              #   Builder profile + societal ambition
+    └── who-is-daniel.md              #   Builder profile
 ```
 
 ## Development Methodology

@@ -93,7 +93,7 @@ CREATE TABLE reeves.relationship_edges (
 ### `graph_traverse(start_type, start_id, predicates, depth)`
 Walk the graph from a starting node, following specified predicates up to N hops.
 
-Example: "Who does Dallas know through work?"
+Example: "Who does Daniel know through work?"
 ```
 traverse(person, dallas_id, [WORKS_AT, COLLABORATES_WITH], depth=2)
 ```
@@ -116,7 +116,7 @@ Sleep daemon analyzes patterns and creates edges:
 
 ### From Explicit Input
 User tells Reeves or creates Webb relationships:
-- "Colleen is my daughter" → `Person(Colleen) IS_CHILD_OF Person(Dallas)`
+- "Colleen is my daughter" → `Person(Colleen) IS_CHILD_OF Person(Daniel)`
 - Manual person/org/place creation in Webb
 
 ### From AI Inference
