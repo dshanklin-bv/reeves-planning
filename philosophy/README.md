@@ -28,6 +28,12 @@ DNA doesn't say "do X when Y happens." It says "build a system that figures out 
 ### 6. Write DNA, Not Code
 Stop using AI to write deterministic instructions. Start using AI to write generative specs — blueprints for systems that build themselves through lived experience and selection pressure.
 
+### 7. Trust Is Earned, Not Configured
+An autonomous system can't start at full autonomy (it's dumb on day one) or stay at zero autonomy (it's a tool, not an agent). Trust is earned through demonstrated competence — per-action, per-person, per-domain. Corrections are selection pressure. The system evolves toward fitness for one specific person's preferences.
+
+### 8. Own Your Data
+An organism doesn't query the environment on every thought. It has a nervous system that continuously internalizes a model of the world. Reeves syncs source data (iMessage, Gmail, etc.) into its own database. Jobs operate on the internal model, not on raw external sources. This is a biological requirement for autonomy, not an engineering preference.
+
 ## Repo Structure
 
 ```
@@ -38,13 +44,16 @@ philosophy/
 │   ├── the-krebs-cycle.md             # Substrate vs. intelligence
 │   ├── 750-megabytes.md               # Information density argument
 │   ├── heuristic-not-deterministic.md  # Why evolution beats engineering
-│   └── write-dna-not-code.md          # Specs over code
+│   ├── write-dna-not-code.md          # Specs over code
+│   └── the-nervous-system.md          # Why Reeves owns its data (sync daemon = nervous system)
 ├── frameworks/
 │   ├── two-primitives.md              # Priors + Memory = Intelligence
 │   ├── evolutionary-loop.md           # OBSERVE → MODEL → INFER → COLLAPSE → GOVERN → LEARN
 │   ├── selection-pressure.md          # What makes AI actually improve
 │   ├── search-and-graph.md           # Search is sensing, graph is memory
-│   └── ensemble-evolution.md          # Randomized critics as artificial selection
+│   ├── ensemble-evolution.md          # Randomized critics as artificial selection
+│   ├── files-declare-databases-run.md # Infrastructure truth: files declare, databases run
+│   └── trust-and-autonomy.md         # Trust calibration as selection pressure, can_i, Jobs
 │   (Development methodology frameworks live in ../methodology/)
 └── implications/
     ├── scaling-is-not-enough.md        # Why bigger models miss the point
